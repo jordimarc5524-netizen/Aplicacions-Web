@@ -1,0 +1,235 @@
+:root {
+    --rojo: rgb(189, 73, 68);
+    --paper: rgb(255, 255, 255);
+    --blanco: rgb(240, 240, 240);
+    --transparencia: rgba(240, 240, 240, 0.5);
+    --negro: rgb(36, 36, 36);
+    --sombra: rgba(36, 36, 36, 0.5);
+    --gris: rgb(187, 187, 187);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--paper);
+}
+
+.container {
+    min-width: 700px;
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 2rem 2rem auto auto;
+}
+
+.capsalera {
+    font-family: "Momo Trust Display", sans-serif;
+    background-color: var(--blanco);
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.titol-principal {
+    min-width: 50%;
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 0 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    margin-right: 2rem;
+}
+
+.titol {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.navegacio-principal {
+    font-family: "Momo Trust Display", sans-serif;
+    background-color: var(--rojo);
+    padding: 1rem 0;
+}
+
+.navegacio-principal ul {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    justify-content: left;
+}
+
+.navegacio-principal a {
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.Compromis {
+    width: 100%;
+    background-image: url(/Imatges/iessineu_gallery_26.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 0;
+    border-top: 0.5rem solid var(--negro);
+    border-bottom: 0.5rem solid var(--negro);
+    display: flex;
+    justify-content: center;
+}
+
+.google-maps {
+    box-shadow: 1rem 1rem 1rem var(--sombra);
+    background-color: var(--transparencia);
+    padding: 2rem 3rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.google-maps a {
+    color: var(--negro);
+    text-decoration: none;
+}
+
+.google-maps p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 1rem;
+}
+
+.google-maps h2 {
+    margin-bottom: 1rem;
+    font-family: "Momo Trust Display", sans-serif;
+}
+
+button {
+    background-color: var(--rojo);
+    font-family: "Momo Trust Display", sans-serif;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0.25rem 0.25rem 0.25rem var(--sombra);
+}
+
+button a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.info-centre {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin: 3rem auto;
+}
+
+.info-centre h2 {
+    font-family: "Momo Trust Display", sans-serif;
+}
+
+.info-centre h3 {
+    font-family: "raleway", sans-serif;
+    /* font-size: 400; <-- CORRECCIÓ: Eliminat el valor incorrecte */
+}
+
+.tarjeta {
+    box-shadow: 1rem 1rem 1rem var(--sombra);
+    background-color: var(--blanco);
+    padding: 2rem;
+    flex: 1 1 30%;
+    min-width: 200px;
+    max-width: 200px;
+}
+
+.tarjeta p {
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.tarjeta h2 {
+    text-align: center;
+}
+
+/*Tarjetes
+.tarjeta.secundaria {
+    background-color: var(--gris);
+}
+
+.tarjeta.formacio {
+    background-color: var(--rojo-claro);
+} 
+
+.tarjeta.certificats {
+    background-color: var(--blanco);
+}
+*/
+
+.peu-paguina {
+    margin-top: 5rem;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.peu-paguina p {
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/*unicament modificar apartir d'aqui*/
+
+.info-principal {
+    padding: 3rem 0;
+}
+
+.info-principal h2 {
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 2.5rem;
+    color: var(--negro);
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.titol-pagina {
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 2.5rem;
+    color: var(--negro);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.subtitol {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--rojo);
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.paragraf-principal {
+    text-align: justify;
+    font-size: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+.titol-seccio {
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    color: var(--negro);
+    text-align: left;
+    margin-top: 3rem;
+}
