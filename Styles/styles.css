@@ -8,15 +8,29 @@
     --gris: rgb(187, 187, 187);
 }
 
+html,
 body {
     margin: 0;
+    /*Elimina el margin per defecte*/
+    height: 100%;
+    /*Estableix la altura total de la pantalla*/
     padding: 0;
+    /*Elimina el padding per defecte*/
     background-color: var(--paper);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    /*Ajusta el main per a que ocupi el espai restant*/
 }
 
 .container {
     min-width: 700px;
+    /*Estableix el mínim de l'anchura del container*/
     max-width: 50%;
+    /*Estableix el màxim de l'anchura del container*/
     margin: 0 auto;
     padding: 2rem 2rem auto auto;
 }
@@ -31,10 +45,13 @@ body {
 
 .titol-principal {
     min-width: 50%;
+    /*Estableix el mínim de l'anchura del titol*/
     max-width: 50%;
+    /*Estableix el màxim de l'anchura del titol*/
     margin: 0 auto;
     padding: 0 5rem;
     width: 100%;
+    /*Estableix el titol ocupi tota la pantalla*/
     display: flex;
     align-items: center;
 }
@@ -58,6 +75,7 @@ body {
 
 .navegacio-principal ul {
     max-width: 50%;
+    /*Estableix el màxim de l'anchura de la navegacio principal*/
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -78,10 +96,34 @@ body {
     background-size: cover;
     background-position: center;
     padding: 6rem 0;
-    border-top: 0.5rem solid var(--negro);
-    border-bottom: 0.5rem solid var(--negro);
     display: flex;
     justify-content: center;
+    box-shadow: 1rem 1rem 1rem var(--sombra);
+}
+
+.imatge {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+.imatge img {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    box-shadow: 1rem 1rem 1rem var(--sombra);
+    max-width: 700px;
+    display: block;
+}
+
+.imatge blockquote {
+    color: var(--negro);
+    text-align: center;
+    font-size: 0.8rem;
 }
 
 .google-maps {
@@ -113,18 +155,32 @@ body {
     font-family: "Momo Trust Display", sans-serif;
 }
 
-button {
+.boto {
     background-color: var(--rojo);
     font-family: "Momo Trust Display", sans-serif;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     box-shadow: 0.25rem 0.25rem 0.25rem var(--sombra);
-}
-
-button a {
     color: var(--blanco);
     text-decoration: none;
+}
+
+.icono-index {
+    width: 50px;
+    height: 50px;
+}
+
+.cercle {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: var(--rojo);
+    box-shadow: 0.5rem 0.5rem 0.5rem var(--sombra);
 }
 
 .info-centre {
@@ -159,6 +215,7 @@ button a {
 
 .tarjeta h2 {
     text-align: center;
+    min-height: 5rem;
 }
 
 /*Tarjetes
@@ -189,8 +246,6 @@ button a {
     padding: 1rem;
 }
 
-/*unicament modificar apartir d'aqui*/
-
 .info-principal {
     padding: 3rem 0;
 }
@@ -220,7 +275,7 @@ button a {
 
 .paragraf-seccio {
     text-align: justify;
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 1.5rem 0;
 }
 
@@ -230,4 +285,36 @@ button a {
     color: var(--negro);
     text-align: left;
     margin-top: 3rem;
+}
+
+.cita {
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem 0;
+    margin-right: 12rem;
+    margin-left: 12rem;
+    border-top: 0.2rem solid var(--negro);
+    border-bottom: 0.2rem solid var(--negro);
+    padding: 1.2rem;
+}
+
+.video {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 0 1rem 1rem var(--sombra);
+    display: block;
+}
+
+.video iframe {
+    width: 100%;
+    height: 500px;
+    margin: 1rem auto;
+}
+
+.video figcaption {
+    text-align: center;
+    font-size: 0.75rem;
+    margin: 1rem 0;
 }
