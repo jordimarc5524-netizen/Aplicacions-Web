@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Raleway:wght@400;900&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/normalize.css">
+    <link rel="stylesheet" href="/Styles/styles.css">
+    <title>Portal IesSineu</title>
+</head>
+
+<body>
+    <header class="capsalera">
+        <div class="titol-principal">
+            <a href="https://redols.caib.es/c07008481/">
+                <img src="/Imatges/Logo.png" alt="Logo IES Sineu" class="logo">
+            </a>
+            <h1 class="titol">IesSineu</h1>
+        </div>
+    </header>
+    <nav class="navegacio-principal">
+        <ul>
+            <li><a href="index.html">Inici</a></li>
+            <li><a href="about.html">Informació</a></li>
+            <li><a href="form.html">Formulari</a></li>
+            <li><a href="dijous.html">Dijous</a></li>
+            <li><a href="gallery.html">Galeria</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="container">
+            <h1 class="titol-seccio">Contactar</h1>
+            <form class="formulari">
+                <div class="nom">
+                    <label for="nom">Nom:</label>
+                    <input maxlength="20" type="text" id="nom" name="nom">
+                </div>
+                <div class="email">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="contrasenya">
+                    <label for="password">Contrasenya:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="comentari">
+                    <label for="comentari">Comentari:</label>
+                    <textarea class="caixa-form" id="comentari" name="comentari"></textarea>
+                </div>
+                <input class="enviar" type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+    <footer class="peu-paguina">
+        <p>Jordi Marc Lumbreras Frau</p>
+        <p><abbr title="Institut d'Educació Pública de Sineu (Mallorca)">Ies Sineu</abbr> | Per a l'assignatura
+            d'aplicaccóns Web</p>
+    </footer>
+</body>
+
+</html>
