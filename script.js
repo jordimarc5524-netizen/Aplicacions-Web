@@ -5,8 +5,8 @@ const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
 //Show input error message
-function showErrorinput(input, message) {
-    const formControl = input.parentElement; 
+form. showErrorinput(input, message) {
+    const formControl = input.parentElement;
     formControl.className = 'form-control error';
     const small = formControl.querySelector('small');
     small.innerText = message;
@@ -14,23 +14,46 @@ function showErrorinput(input, message) {
 
 //Show success outline
 function showSuccess(input) {
-    const formControl = input.parentElement; 
-    formControl.className = 'form-control success';
-}
+        const formControl = input.parentElement;
+        formControl.className = 'form-control success';
+    }
 
-//check email is valid
-function isValidEmail(email) {
+    //check email is valid
+    function isValidEmail(email) {
+            const validateEmail = (email) => {
+                return String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+            };
+        }
 
-    const re =
-  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    return re.test(String(email).toLowerCase());
-}
+        //Event listeners
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-//Event listeners
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (username.value === '')
-        showError('Username is required');
-        else showSuccess(username);
-});
-
+            if (username.value === ''){
+                    showError('Username is required');
+                } else {
+                    showSuccess(username);
+                }
+                if (email.value === ''){
+                        showError('Email is required');
+                    } else if(isValidEmail(email.value())) {
+                        showError('Email is not valid');
+                    }
+                    else {
+                            showSuccess(email);
+                        }
+                        if (password.value === ''){
+                                showError('Password is required');
+                            } else {
+                                showSuccess(password);
+                            }
+                            if (password2.value === ''){
+                                    showError('Password confirmation is required');
+                                } else {
+                                    showSuccess(password2);
+                                }
+                        });
