@@ -19,6 +19,7 @@ function calculate() {
             rateEl.innerText = `1 ${constrency_one} = ${rate} ${constrency_two}`;
             amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
         });
+        
 }
 
 // Event listeners
