@@ -23,9 +23,19 @@ function calculate() {
 
 // Event listeners
 cunrencyEl_one.addEventListener("change", calculate);
-amountEl_one.addEventListener("input", calculate);
+amountEl_one.addEventListener('input', () => {
+    if (amountEl_one.value < 0) {
+        amountEl_one.value = 0;
+    }
+    calculate();
+});
 cunrencyEl_two.addEventListener("change", calculate);
-amountEl_two.addEventListener("input", calculate);
+amountEl_two.addEventListener('input', () => {
+    if (amountEl_two.value < 0) {
+        amountEl_two.value = 0;
+    }
+    calculate();
+});
 
 swap.addEventListener("click", () => {
     const temp = cunrencyEl_one.value;
