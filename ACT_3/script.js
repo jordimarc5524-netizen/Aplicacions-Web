@@ -3,6 +3,8 @@ const seats = document.querySelectorAll(' .row .seat:not(.occupied)');
 const count = document.getElementById('count');
 const total = document.getElementById('total');
 const movieSelect = document.getElementById('movie');
+const currencySelect = document.getElementById('currency');
+const currencyLabel = document.getElementById('currency-label');
 
 popularlateUI();
 
@@ -25,7 +27,7 @@ function updateSelectedCount() {
     const selectedSeatsCount = selectedSeats.length;
 
     count.innerText = selectedSeatsCount;
-    total.innerText = selectedSeatsCount * ticketPrice;
+    convertPrice();
 }
 
 //Get data from localstorage and populate UI
@@ -69,3 +71,41 @@ container.addEventListener('click', (e) => {
 
 //Initial count and total set
 updateSelectedCount();
+
+//Canvi monetari
+function convertPrice() {
+    const moneda = currencySelect.value;
+
+    if (moneda === '') {
+        return;
+    }
+    const selectedSeats = document.querySelectorAll('.row .seat.selected');
+
+    fetch('https://api.exchangerate-api.com/v4/latest/USD')
+        .then(res => res.json())
+        .then(data => {
+            const rate = data.rates[moneda];
+            currencyLabel.innerText = moneda;
+            total.innerText = (selectedSeats.length * ticketPrice * rate).toFixed(2);
+            movieSelect.options[0].innerText = 'Avengers: Endgame (' + (10 * rate).toFixed(2) + ' ' + moneda + ')';
+            movieSelect.options[1].innerText = 'Joker (' + (12 * rate).toFixed(2) + ' ' + moneda + ')';
+            movieSelect.options[2].innerText = 'Toy Story 4 (' + (8 * rate).toFixed(2) + ' ' + moneda + ')';
+            movieSelect.options[3].innerText = 'The Lion King (' + (9 * rate).toFixed(2) + ' ' + moneda + ')';
+        });
+}
+
+//selector de monedes
+
+fetch('https://api.exchangerate-api.com/v4/latest/USD')
+    .then(res => res.json())
+    .then(data => {
+        Object.keys(data.rates).forEach(moneda => {
+            const option = document.createElement('option');
+            option.value = moneda;
+            option.innerText = moneda;
+            currencySelect.appendChild(option);
+        });
+    });
+
+currencySelect.addEventListener('change', () => {convertPrice();
+});
